@@ -45,7 +45,37 @@ cout << "El número " << numero << " está presente en el vector en la posición
 std::cout << "El número " << numero << " no se encuentra en el vector.\n";
 }*/
 
+//ejercicio 3//
 
+
+
+int n;
+std::cout << "Ingrese la cantidad de números: ";
+std::cin >> n;
+
+
+std::vector<int> numeros;
+
+
+for (int i = 0; i < n; ++i) {
+int num;
+cout << "Ingrese el número " << i + 1 << ": ";
+cin >> num;
+numeros.push_back(num);
+}
+
+
+std::sort(numeros.begin(), numeros.end());
+
+auto it = std::unique(numeros.begin(), numeros.end());
+numeros.erase(it, numeros.end());
+
+
+std::cout << "Números únicos en el vector:" << std::endl;
+for (int num : numeros) {
+    cout << num << " ";
+}
+cout << std::endl;
 
 
     return 0;
